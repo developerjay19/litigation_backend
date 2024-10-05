@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-01 15:49:32.015553",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "description_of_matter_of_issue",
+  "taxable_amount",
+  "pre_deposit_igst",
+  "pre_deposit_cgst",
+  "pre_deposit_sgst",
+  "pre_deposit_cess",
+  "contingent_liability_igst",
+  "contingent_liability_cgst",
+  "contingent_liability_sgst",
+  "contingent_liability_cess",
+  "rate",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "description_of_matter_of_issue",
+   "fieldtype": "Data",
+   "label": "Description of Matter of Issue"
+  },
+  {
+   "fieldname": "taxable_amount",
+   "fieldtype": "Data",
+   "label": "Taxable Amount"
+  },
+  {
+   "fieldname": "pre_deposit_igst",
+   "fieldtype": "Data",
+   "label": "Pre Deposit IGST"
+  },
+  {
+   "fieldname": "pre_deposit_cgst",
+   "fieldtype": "Data",
+   "label": "Pre Deposit CGST"
+  },
+  {
+   "fieldname": "pre_deposit_sgst",
+   "fieldtype": "Data",
+   "label": "Pre Deposit SGST"
+  },
+  {
+   "fieldname": "pre_deposit_cess",
+   "fieldtype": "Data",
+   "label": "Pre Deposit CESS"
+  },
+  {
+   "fieldname": "contingent_liability_igst",
+   "fieldtype": "Data",
+   "label": "Contingent Liability IGST"
+  },
+  {
+   "fieldname": "contingent_liability_cgst",
+   "fieldtype": "Data",
+   "label": "Contingent Liability CGST"
+  },
+  {
+   "fieldname": "contingent_liability_sgst",
+   "fieldtype": "Data",
+   "label": "Contingent Liability SGST"
+  },
+  {
+   "fieldname": "contingent_liability_cess",
+   "fieldtype": "Data",
+   "label": "Contingent Liability CESS"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Data",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Notice Pre Deposit And Contingent Liability Amount",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-01 16:41:54.022144",
+ "modified_by": "Administrator",
+ "module": "litigation",
+ "name": "Notice Pre Deposit And Contingent Liability Amount",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

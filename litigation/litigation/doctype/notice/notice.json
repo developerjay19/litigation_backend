@@ -1,0 +1,305 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-01 14:22:56.481872",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "notice_information_tab",
+  "notice_information_section",
+  "notice_type",
+  "notice_id",
+  "notice_date",
+  "column_break_zgae",
+  "entity",
+  "gstin",
+  "gst_form",
+  "issuing_authority_section",
+  "department",
+  "issuing_authority",
+  "mobile_no",
+  "column_break_ziko",
+  "email",
+  "mode_of_communication",
+  "reference_info_section",
+  "din_no",
+  "din_date",
+  "column_break_bfwz",
+  "ref_no",
+  "ref_date",
+  "notice_detail_section",
+  "issue_under_section",
+  "issue_under_rule",
+  "column_break_yfkh",
+  "period_covered",
+  "date_of_receipt_of_notice",
+  "matter_of_issue_section",
+  "demand_amount",
+  "admitted_amount",
+  "column_break_ozec",
+  "disputed_amount",
+  "pre_deposit_and_contingent_liability",
+  "replay_info_section",
+  "due_date",
+  "prepare_by",
+  "column_break_zyjb",
+  "date_or_replay_submit",
+  "date_or_arn",
+  "attachment",
+  "development_side_columns_section",
+  "notice_status",
+  "column_break_ofsb",
+  "notice_stages"
+ ],
+ "fields": [
+  {
+   "fieldname": "notice_type",
+   "fieldtype": "Data",
+   "label": "Notice Type"
+  },
+  {
+   "fieldname": "notice_id",
+   "fieldtype": "Data",
+   "label": "Notice Id"
+  },
+  {
+   "fieldname": "notice_date",
+   "fieldtype": "Date",
+   "label": "Notice Date"
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "label": "Entity"
+  },
+  {
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldname": "gst_form",
+   "fieldtype": "Data",
+   "label": "GST Form"
+  },
+  {
+   "fieldname": "notice_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Notice Information"
+  },
+  {
+   "fieldname": "notice_information_section",
+   "fieldtype": "Section Break",
+   "label": "Notice Information"
+  },
+  {
+   "fieldname": "issuing_authority_section",
+   "fieldtype": "Section Break",
+   "label": "Issuing Authority"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department Master"
+  },
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Data",
+   "label": "Issuing Authority"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "mode_of_communication",
+   "fieldtype": "Select",
+   "label": "Mode of Communication",
+   "options": "Email\nCourier\nWhatsApp"
+  },
+  {
+   "fieldname": "column_break_zgae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ziko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_info_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Info"
+  },
+  {
+   "fieldname": "din_no",
+   "fieldtype": "Data",
+   "label": "DIN No"
+  },
+  {
+   "fieldname": "din_date",
+   "fieldtype": "Data",
+   "label": "DIN Date"
+  },
+  {
+   "fieldname": "column_break_bfwz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ref_no",
+   "fieldtype": "Data",
+   "label": "Ref No"
+  },
+  {
+   "fieldname": "ref_date",
+   "fieldtype": "Date",
+   "label": "Ref Date"
+  },
+  {
+   "fieldname": "notice_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Notice Detail"
+  },
+  {
+   "fieldname": "issue_under_section",
+   "fieldtype": "Data",
+   "label": "Issue under section"
+  },
+  {
+   "fieldname": "issue_under_rule",
+   "fieldtype": "Data",
+   "label": "Issue under Rule"
+  },
+  {
+   "fieldname": "period_covered",
+   "fieldtype": "Data",
+   "label": "Period Covered"
+  },
+  {
+   "fieldname": "date_of_receipt_of_notice",
+   "fieldtype": "Data",
+   "label": "Date of Receipt of Notice"
+  },
+  {
+   "fieldname": "column_break_yfkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "matter_of_issue_section",
+   "fieldtype": "Section Break",
+   "label": "Matter of Issue"
+  },
+  {
+   "fieldname": "demand_amount",
+   "fieldtype": "Table",
+   "label": "Demand Amount",
+   "options": "Notice Demand Amount"
+  },
+  {
+   "fieldname": "admitted_amount",
+   "fieldtype": "Table",
+   "label": "Admitted Amount ",
+   "options": "Notice Admitted Amount"
+  },
+  {
+   "fieldname": "column_break_ozec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "disputed_amount",
+   "fieldtype": "Table",
+   "label": "Disputed Amount",
+   "options": "Notice Disputed Amount"
+  },
+  {
+   "fieldname": "pre_deposit_and_contingent_liability",
+   "fieldtype": "Table",
+   "label": "Pre Deposit and Contingent Liability",
+   "options": "Notice Pre Deposit And Contingent Liability Amount"
+  },
+  {
+   "fieldname": "replay_info_section",
+   "fieldtype": "Section Break",
+   "label": "Replay Info"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Data",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "prepare_by",
+   "fieldtype": "Data",
+   "label": "Prepare By"
+  },
+  {
+   "fieldname": "date_or_replay_submit",
+   "fieldtype": "Select",
+   "label": "Date or Replay Submit",
+   "options": "Reply with Due Date\nReply with Extention Date"
+  },
+  {
+   "fieldname": "column_break_zyjb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_or_arn",
+   "fieldtype": "Date",
+   "label": "Date or ARN"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach Image",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "development_side_columns_section",
+   "fieldtype": "Section Break",
+   "label": "Development Side columns "
+  },
+  {
+   "fieldname": "notice_status",
+   "fieldtype": "Data",
+   "label": "Notice Status"
+  },
+  {
+   "fieldname": "notice_stages",
+   "fieldtype": "Data",
+   "label": "Notice Stages"
+  },
+  {
+   "fieldname": "column_break_ofsb",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-01 16:42:58.054117",
+ "modified_by": "Administrator",
+ "module": "litigation",
+ "name": "Notice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-01 15:21:30.280458",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "appellate_authority_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "appellate_authority_name",
+   "fieldtype": "Data",
+   "label": "Appellate Authority Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-01 15:22:51.796108",
+ "modified_by": "Administrator",
+ "module": "litigation",
+ "name": "Appellate Authority Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
