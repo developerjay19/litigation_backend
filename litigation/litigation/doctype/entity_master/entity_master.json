@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:entity_name",
  "creation": "2024-10-01 15:10:19.908830",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,15 +12,17 @@
   {
    "fieldname": "entity_name",
    "fieldtype": "Data",
-   "label": "Entity Name"
+   "label": "Entity Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 15:17:57.921814",
+ "modified": "2024-10-09 14:35:43.235666",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Entity Master",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

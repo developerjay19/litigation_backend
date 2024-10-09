@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:form_name",
  "creation": "2024-10-01 15:19:26.619089",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,20 +13,22 @@
   {
    "fieldname": "form_name",
    "fieldtype": "Data",
-   "label": "Form Name"
+   "label": "Form Name",
+   "unique": 1
   },
   {
    "fieldname": "form_description",
-   "fieldtype": "Data",
+   "fieldtype": "Text",
    "label": "Form Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 15:20:13.627472",
+ "modified": "2024-10-09 14:36:25.223827",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "GST Form Master",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

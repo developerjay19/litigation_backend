@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:notice_id",
  "creation": "2024-10-01 14:22:56.481872",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -35,21 +36,27 @@
   "date_of_receipt_of_notice",
   "matter_of_issue_section",
   "demand_amount",
-  "admitted_amount",
-  "column_break_ozec",
   "disputed_amount",
+  "column_break_ozec",
   "pre_deposit_and_contingent_liability",
+  "admitted_amount",
   "replay_info_section",
   "due_date",
-  "prepare_by",
+  "prepared_by",
+  "reviewed_by",
+  "appeal_status",
   "column_break_zyjb",
   "date_or_replay_submit",
   "date_or_arn",
   "attachment",
+  "date_of_appeal",
   "development_side_columns_section",
   "notice_status",
+  "date_of_hearing",
   "column_break_ofsb",
-  "notice_stages"
+  "notice_stage",
+  "date_of_extension",
+  "remarks"
  ],
  "fields": [
   {
@@ -60,7 +67,10 @@
   {
    "fieldname": "notice_id",
    "fieldtype": "Data",
-   "label": "Notice Id"
+   "in_list_view": 1,
+   "label": "Notice Id",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "notice_date",
@@ -69,8 +79,9 @@
   },
   {
    "fieldname": "entity",
-   "fieldtype": "Data",
-   "label": "Entity"
+   "fieldtype": "Link",
+   "label": "Entity",
+   "options": "Entity Master"
   },
   {
    "fieldname": "gstin",
@@ -105,8 +116,9 @@
   },
   {
    "fieldname": "issuing_authority",
-   "fieldtype": "Data",
-   "label": "Issuing Authority"
+   "fieldtype": "Link",
+   "label": "Issuing Authority",
+   "options": "Issuing Authority Master"
   },
   {
    "fieldname": "mobile_no",
@@ -183,7 +195,7 @@
   },
   {
    "fieldname": "date_of_receipt_of_notice",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Date of Receipt of Notice"
   },
   {
@@ -230,13 +242,8 @@
   },
   {
    "fieldname": "due_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Due Date"
-  },
-  {
-   "fieldname": "prepare_by",
-   "fieldtype": "Data",
-   "label": "Prepare By"
   },
   {
    "fieldname": "date_or_replay_submit",
@@ -269,21 +276,59 @@
    "label": "Notice Status"
   },
   {
-   "fieldname": "notice_stages",
-   "fieldtype": "Data",
-   "label": "Notice Stages"
-  },
-  {
    "fieldname": "column_break_ofsb",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By ",
+   "options": "User"
+  },
+  {
+   "fieldname": "appeal_status",
+   "fieldtype": "Data",
+   "label": "Appeal Status"
+  },
+  {
+   "fieldname": "date_of_appeal",
+   "fieldtype": "Date",
+   "label": "Date of Appeal"
+  },
+  {
+   "fieldname": "notice_stage",
+   "fieldtype": "Select",
+   "label": "Notice Stage"
+  },
+  {
+   "fieldname": "date_of_hearing",
+   "fieldtype": "Date",
+   "label": "Date of Hearing"
+  },
+  {
+   "fieldname": "date_of_extension",
+   "fieldtype": "Date",
+   "label": "Date of Extension"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 16:42:58.054117",
+ "modified": "2024-10-09 14:38:24.666891",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

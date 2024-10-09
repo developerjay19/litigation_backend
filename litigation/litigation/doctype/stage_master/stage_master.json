@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:stage_name",
  "creation": "2024-10-01 15:18:21.671077",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +13,8 @@
   {
    "fieldname": "stage_name",
    "fieldtype": "Data",
-   "label": "Stage Name"
+   "label": "Stage Name",
+   "unique": 1
   },
   {
    "fieldname": "stage_sequence",
@@ -22,10 +24,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 15:19:01.118590",
+ "modified": "2024-10-09 14:36:06.133044",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Stage Master",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
