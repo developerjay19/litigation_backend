@@ -40,6 +40,8 @@
   "column_break_ozec",
   "pre_deposit_and_contingent_liability",
   "admitted_amount",
+  "section_break_znnf",
+  "table_okzc",
   "replay_info_section",
   "due_date",
   "prepared_by",
@@ -320,11 +322,20 @@
    "fieldname": "remarks",
    "fieldtype": "Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_znnf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_okzc",
+   "fieldtype": "Table",
+   "options": "Notice Pre Deposit And Contingent Liability Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-09 14:38:24.666891",
+ "modified": "2024-10-09 15:08:41.560237",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
