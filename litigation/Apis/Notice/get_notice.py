@@ -15,3 +15,8 @@ def get_notice_with_child_tables(notice_name):
         "notice_disputed_amount": notice_doc.get("notice_disputed_amount"),
         "notice_admitted_amount": notice_doc.get("notice_admitted_amount")
     }
+
+@frappe.whitelist()
+def all_notice():
+
+	

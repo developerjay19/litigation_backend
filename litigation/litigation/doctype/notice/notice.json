@@ -55,6 +55,7 @@
   "development_side_columns_section",
   "notice_status",
   "date_of_hearing",
+  "contingent_liabilities",
   "column_break_ofsb",
   "notice_stage",
   "date_of_extension",
@@ -330,12 +331,19 @@
   {
    "fieldname": "table_okzc",
    "fieldtype": "Table",
+   "label": "Notice Pre Deposit And Contingent Liability Amount",
    "options": "Notice Pre Deposit And Contingent Liability Amount"
+  },
+  {
+   "fieldname": "contingent_liabilities",
+   "fieldtype": "Table",
+   "label": "Contingent Liabilities",
+   "options": "Contingent Liabilities"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-09 15:08:41.560237",
+ "modified": "2024-10-10 09:35:56.467020",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
