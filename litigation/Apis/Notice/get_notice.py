@@ -7,25 +7,60 @@ from frappe import _
 
 @frappe.whitelist()
 def get_master_data():
+    try:
+  
+        entity_data = frappe.get_all('Entity Master', fields=['*'])
+
+        
+        department_data = frappe.get_all('Department Master', fields=['*'])
+
+        
+        issuing_authority_data = frappe.get_all('Issuing Authority Master', fields=['*'])
+
+        
+        user_data = frappe.get_all('User', fields=['name', 'email', 'role_profile_name'])
+
+   
+        return {
+            'status': 'success',
+            'message': 'Data fetched successfully',
+            'data': {
+                'entity_master': entity_data,
+                'department_master': department_data,
+                'issuing_authority_master': issuing_authority_data,
+                'user_data': user_data
+            }
+        }
+
+    except Exception as e:
+        
+        return {
+            'status': 'failure',
+            'message': f'Error fetching data: {str(e)}'
+        }
+
+
+# @frappe.whitelist()
+# def get_master_data():
     
-    entity_data = frappe.get_all('Entity Master', fields=['*'])
+#     entity_data = frappe.get_all('Entity Master', fields=['*'])
 
 
-    department_data = frappe.get_all('Department Master', fields=['*'])
+#     department_data = frappe.get_all('Department Master', fields=['*'])
 
     
-    issuing_authority_data = frappe.get_all('Issuing Authority Master', fields=['*'])
+#     issuing_authority_data = frappe.get_all('Issuing Authority Master', fields=['*'])
 
 
-    user_data = frappe.get_all('User', fields=['name', 'email', 'role_profile_name'])
+#     user_data = frappe.get_all('User', fields=['name', 'email', 'role_profile_name'])
 
   
-    return {
-        'entity_master': entity_data,
-        'department_master': department_data,
-        'issuing_authority_master': issuing_authority_data,
-        'user_data': user_data
-    }
+#     return {
+#         'entity_master': entity_data,
+#         'department_master': department_data,
+#         'issuing_authority_master': issuing_authority_data,
+#         'user_data': user_data
+#     }
 
 
 
