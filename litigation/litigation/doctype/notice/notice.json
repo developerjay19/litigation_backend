@@ -93,8 +93,9 @@
   },
   {
    "fieldname": "gst_form",
-   "fieldtype": "Data",
-   "label": "GST Form"
+   "fieldtype": "Link",
+   "label": "GST Form",
+   "options": "GST Form Master"
   },
   {
    "fieldname": "notice_information_tab",
@@ -343,7 +344,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 09:35:56.467020",
+ "modified": "2024-10-11 12:01:03.945664",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
