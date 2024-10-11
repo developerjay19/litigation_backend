@@ -28,6 +28,8 @@ def get_master_data():
 
         gst_form_data = frappe.get_all('GST Form Master', 'form_name')
 
+        stage_data = frappe.db.get_all('Stage Master', 'stage_name')
+
 
         frappe.local.response['http_status_code'] = 200
         return {
@@ -38,7 +40,8 @@ def get_master_data():
                 'department_master': department_data,
                 'issuing_authority_master': issuing_authority_data,
                 'user_data': user_data,
-                'gst_form_data': gst_form_data
+                'gst_form_data': gst_form_data,
+                'stage_data': stage_data
             }
         }
 
