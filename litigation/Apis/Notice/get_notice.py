@@ -1,6 +1,6 @@
 import frappe
 from frappe import _
-
+from frappe.model.document import Document
 @frappe.whitelist()
 def test_function():
     json_string = '{"name": "John", "age": 30}'
@@ -56,6 +56,144 @@ def get_master_data():
         }
 
 
+
+def check_stage(data, method):
+
+    notice_id = data.get('notice_id')
+    stage = data.get('notice_stage')
+    print("**********", notice_id, stage)
+
+
+
+
+# @frappe.whitelist(allow_guest=True)
+# def create_filtered_resource(doctype, **data):
+    
+#     doc = frappe.get_doc({
+#         "doctype": "Notice",
+#         **data
+#         })
+#     doc.insert()
+
+    
+#     filtered_response = {
+#         "name": doc.name
+
+#     }
+
+#     return filtered_response
+
+# @frappe.whitelist(allow_guest=True)
+# def create_filtered_resource(doctype, **data):
+    
+#     doc = frappe.get_doc({
+#         "doctype": "Notice",
+#         "notice_id": data.get("notice_id"),
+#         "notice_type": data.get("notice_type"),
+#         "demand_amount": data.get("demand_amount"),
+#         "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability")
+#     })
+
+  
+#     doc.insert()
+
+    
+#     frappe.db.commit()
+
+   
+#     filtered_response = {
+#         "name": doc.name
+#     }
+
+#     return filtered_response
+
+
+
+@frappe.whitelist(allow_guest=True)
+def create_and_update_notice(doctype, **data):
+    created = False
+
+    if data.get("name"):
+        doc = frappe.get_doc("Notice", data.get("name"))
+    elif data.get("name"):
+        existing_doc = frappe.db.exists("Notice", {"name": data.get("name")})
+        if existing_doc:
+            doc = frappe.get_doc("Notice", existing_doc)
+        else:
+            doc = frappe.get_doc({"doctype": "Notice"})
+            created = True
+    else:
+        doc = frappe.get_doc({"doctype": "Notice"})
+        created = True
+
+    doc.update({
+        "ref_no": data.get("name"),
+        "notice_id": data.get("notice_id"),
+        "notice_type": data.get("notice_type"),
+        "demand_amount": data.get("demand_amount"),
+        "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability"),
+        "disputed_amount": data.get("disputed_amount"),
+        "table_okzc": data.get("table_okzc"),
+        "contingent_liabilities": data.get("contingent_liabilities"),
+    })
+
+    doc.save()
+    frappe.db.commit()
+
+    status_code = 201 if created else 200
+
+    filtered_response = {
+        "name": doc.name,
+        "status_code": status_code
+    }
+
+    return filtered_response
+
+
+# @frappe.whitelist(allow_guest=True)
+# def create_and_update_notice(doctype, **data):
+#     created = False
+
+#     if data.get("name"):
+#         doc = frappe.get_doc("Notice", data.get("name"))
+#     elif data.get("ref_no"):
+#         existing_doc = frappe.db.exists("Notice", {"name": data.get("name")})
+#         if existing_doc:
+#             doc = frappe.get_doc("Notice", existing_doc)
+#         else:
+#             doc = frappe.get_doc({"doctype": "Notice"})
+#             created = True
+#     else:
+#         existing_doc = frappe.db.exists("Notice", {"notice_id": data.get("notice_id")})
+#         if existing_doc:
+#             doc = frappe.get_doc("Notice", existing_doc)
+#             notice_stage = doc.notice_stage
+#             if notice_stage == data.get("stage_name"):
+#                 frappe.throw(f"This notice ID already exists with the same stage name: {stage_name}")
+#         else:
+#             doc = frappe.get_doc({"doctype": "Notice"})
+#             created = True
+
+#     doc.update({
+#         "ref_no": data.get("ref_no"),
+#         "notice_id": data.get("notice_id"),
+#         "notice_type": data.get("notice_type"),
+#         "demand_amount": data.get("demand_amount"),
+#         "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability"),
+#         "stage_name": data.get("stage_name")  
+#     })
+
+#     doc.save()
+#     frappe.db.commit()
+
+#     status_code = 201 if created else 200
+
+#     filtered_response = {
+#         "name": doc.name,
+#         "status_code": status_code
+#     }
+
+#     return filtered_response
 
 
 

@@ -71,8 +71,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Notice Id",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "notice_date",
@@ -307,7 +306,8 @@
   {
    "fieldname": "notice_stage",
    "fieldtype": "Select",
-   "label": "Notice Stage"
+   "label": "Notice Stage",
+   "options": "Stage1\nStage2\nStage3\nStage4"
   },
   {
    "fieldname": "date_of_hearing",
@@ -343,7 +343,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-14 15:47:55.713792",
+ "modified": "2024-10-14 16:18:52.332415",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
