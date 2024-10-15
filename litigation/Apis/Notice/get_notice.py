@@ -68,11 +68,7 @@ def check_stage(data, method):
     print("***************", name, notice_id, stage)
 
    
-    exists = frappe.db.sql("""
-        SELECT notice_id, notice_stage 
-        FROM `tabNotice` 
-        WHERE notice_id=%s AND notice_stage=%s AND name!=%s
-    """, (notice_id, stage, name), as_dict=1)
+    exists = frappe.db.sql(""" SELECT notice_id, notice_stage FROM `tabNotice` WHERE notice_id=%s AND notice_stage=%s AND name!=%s """, (notice_id, stage, name), as_dict=1)
 
     print("*****************", exists)
     
