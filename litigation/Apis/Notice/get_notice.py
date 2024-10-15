@@ -57,65 +57,42 @@ def get_master_data():
 
 
 
-def check_stage(data, method):
-
-    notice_id = data.get('notice_id')
-    stage = data.get('notice_stage')
-    print("**********", notice_id, stage)
 
 
 
+# def check_stage(data, method):
+#     name = data.get('name')
+#     notice_id = data.get('notice_id')
+#     stage = data.get('notice_stage')
+#     print("***************", name, notice_id, stage)
 
-# @frappe.whitelist(allow_guest=True)
-# def create_filtered_resource(doctype, **data):
-    
-#     doc = frappe.get_doc({
-#         "doctype": "Notice",
-#         **data
-#         })
-#     doc.insert()
+
+#     # if not notice_id:
+#     #     print("Notice ID is not provided.")
+#     #     return
 
     
-#     filtered_response = {
-#         "name": doc.name
-
-#     }
-
-#     return filtered_response
-
-# @frappe.whitelist(allow_guest=True)
-# def create_filtered_resource(doctype, **data):
-    
-#     doc = frappe.get_doc({
-#         "doctype": "Notice",
-#         "notice_id": data.get("notice_id"),
-#         "notice_type": data.get("notice_type"),
-#         "demand_amount": data.get("demand_amount"),
-#         "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability")
-#     })
-
-  
-#     doc.insert()
+#     exists = frappe.db.exists("Notice", {"notice_stage": stage})
+#     if exists:
+#         frappe.throw("Stage already exists for this Notice ID.")
+#     else:
+#         pass
+#     print("***********************************", record)
 
     
-#     frappe.db.commit()
+    # if record and record.notice_stage == stage:
 
-   
-#     filtered_response = {
-#         "name": doc.name
-#     }
+    #     print(f"Stage is same: {notice_id}, Stage: {stage}")
+        
+    #     frappe.throw("Stage already exists for this Notice ID.")
+    # else:
+    #     print(f"Record Created: {notice_id}, Stage: {stage}")
 
-#     return filtered_response
-
-
-
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def create_and_update_notice(**data):
     created = False
 
     if data.get("name"):
-        doc = frappe.get_doc("Notice", data.get("name"))
-    elif data.get("name"):
         existing_doc = frappe.db.exists("Notice", {"name": data.get("name")})
         if existing_doc:
             doc = frappe.get_doc("Notice", existing_doc)
@@ -126,21 +103,25 @@ def create_and_update_notice(**data):
         doc = frappe.get_doc({"doctype": "Notice"})
         created = True
 
+  
     doc.update({
-        "ref_no": data.get("name"),
-        "notice_id": data.get("notice_id"),
-        "notice_type": data.get("notice_type"),
-        "demand_amount": data.get("demand_amount"),
-        "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability"),
-        "disputed_amount": data.get("disputed_amount"),
-        "table_okzc": data.get("table_okzc"),
-        "contingent_liabilities": data.get("contingent_liabilities"),
+        "name": data.get("name"),
+        "notice_id": data.get("notice_id") if data.get("notice_id") else doc.notice_id,  
+        "notice_type": data.get("notice_type") or doc.notice_type,  
+        "demand_amount": data.get("demand_amount") or doc.demand_amount,
+        "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability") or doc.pre_deposit_and_contingent_liability,
+        "disputed_amount": data.get("disputed_amount") or doc.disputed_amount,
+        "table_okzc": data.get("table_okzc") or doc.table_okzc,
+        "contingent_liabilities": data.get("contingent_liabilities") or doc.contingent_liabilities,
     })
+
 
     doc.save()
     frappe.db.commit()
 
+    
     status_code = 201 if created else 200
+
 
     filtered_response = {
         "name": doc.name,
@@ -150,101 +131,4 @@ def create_and_update_notice(**data):
     return filtered_response
 
 
-# @frappe.whitelist(allow_guest=True)
-# def create_and_update_notice(doctype, **data):
-#     created = False
 
-#     if data.get("name"):
-#         doc = frappe.get_doc("Notice", data.get("name"))
-#     elif data.get("ref_no"):
-#         existing_doc = frappe.db.exists("Notice", {"name": data.get("name")})
-#         if existing_doc:
-#             doc = frappe.get_doc("Notice", existing_doc)
-#         else:
-#             doc = frappe.get_doc({"doctype": "Notice"})
-#             created = True
-#     else:
-#         existing_doc = frappe.db.exists("Notice", {"notice_id": data.get("notice_id")})
-#         if existing_doc:
-#             doc = frappe.get_doc("Notice", existing_doc)
-#             notice_stage = doc.notice_stage
-#             if notice_stage == data.get("stage_name"):
-#                 frappe.throw(f"This notice ID already exists with the same stage name: {stage_name}")
-#         else:
-#             doc = frappe.get_doc({"doctype": "Notice"})
-#             created = True
-
-#     doc.update({
-#         "ref_no": data.get("ref_no"),
-#         "notice_id": data.get("notice_id"),
-#         "notice_type": data.get("notice_type"),
-#         "demand_amount": data.get("demand_amount"),
-#         "pre_deposit_and_contingent_liability": data.get("pre_deposit_and_contingent_liability"),
-#         "stage_name": data.get("stage_name")  
-#     })
-
-#     doc.save()
-#     frappe.db.commit()
-
-#     status_code = 201 if created else 200
-
-#     filtered_response = {
-#         "name": doc.name,
-#         "status_code": status_code
-#     }
-
-#     return filtered_response
-
-
-
-
-
-# @frappe.whitelist()
-# def get_master_data():
-    
-#     entity_data = frappe.get_all('Entity Master', fields=['*'])
-
-
-#     department_data = frappe.get_all('Department Master', fields=['*'])
-
-    
-#     issuing_authority_data = frappe.get_all('Issuing Authority Master', fields=['*'])
-
-
-#     user_data = frappe.get_all('User', fields=['name', 'email', 'role_profile_name'])
-
-  
-#     return {
-#         'entity_master': entity_data,
-#         'department_master': department_data,
-#         'issuing_authority_master': issuing_authority_data,
-#         'user_data': user_data
-#     }
-
-
-
-
-
-
-
-
-
-
-# @frappe.whitelist()
-# def get_notice_with_child_tables(notice_name):
-    
-#     notice_doc = frappe.get_doc('Notice', notice_name)
-
-    
-#     return {
-#         "notice": notice_doc.as_dict(),
-#         "notice_demand_amount": notice_doc.get("notice_demand_amount"),
-#         "notice_pre_deposit_and_contingent_liability_amount": notice_doc.get("notice_pre_deposit_and_contingent_liability_amount"),
-#         "notice_disputed_amount": notice_doc.get("notice_disputed_amount"),
-#         "notice_admitted_amount": notice_doc.get("notice_admitted_amount")
-#     }
-
-# @frappe.whitelist()
-# def all_notice():
-
-	

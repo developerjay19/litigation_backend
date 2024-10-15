@@ -70,8 +70,7 @@
    "fieldname": "notice_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Notice Id",
-   "reqd": 1
+   "label": "Notice Id"
   },
   {
    "fieldname": "notice_date",
@@ -343,7 +342,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-14 16:18:52.332415",
+ "modified": "2024-10-15 11:38:27.783836",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
