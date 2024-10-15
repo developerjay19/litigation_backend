@@ -145,16 +145,16 @@ app_license = "mit"
 # 	}
 # }
 
-# doc_events = {
+doc_events = {
 	
-# 	"Notice":{
+	"Notice":{
 
-# 		"validate": "litigation.Apis.Notice.get_notice.check_stage"
+	#	"validate": "litigation.Apis.Notice.get_notice.check_stage"
 
-# 	}
+	}
 
 
-# }
+}
 
 # Scheduled Tasks
 # ---------------
