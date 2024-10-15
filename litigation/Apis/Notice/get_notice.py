@@ -110,7 +110,7 @@ def check_stage(data, method):
 
 
 @frappe.whitelist(allow_guest=True)
-def create_and_update_notice(doctype, **data):
+def create_and_update_notice(**data):
     created = False
 
     if data.get("name"):
