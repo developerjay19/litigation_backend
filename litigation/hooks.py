@@ -149,7 +149,7 @@ doc_events = {
 	
 	"Notice":{
 
-		"validate": "litigation.Apis.Notice.get_notice.check_stage"
+		"after_insert": "litigation.Apis.Notice.get_notice.check_stage"
 
 	}
 
@@ -187,7 +187,7 @@ doc_events = {
 
 override_whitelisted_methods = {
 	#"frappe.desk.doctype.event.event.get_events": "litigation.event.get_events"
-	"frappe.client.save": "litigation.Apis.Notice.get_notice.create_and_update_notice",
+	#"frappe.client.save": "litigation.Apis.Notice.get_notice.create_and_update_notice",
 }
 #
 # each overriding function accepts a `data` argument;
