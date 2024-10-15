@@ -74,7 +74,7 @@ def check_stage(data, method):
     
     exists = frappe.db.sql(""" SELECT notice_id, notice_stage FROM `tabNotice` WHERE notice_id=%s AND notice_stage=%s """, (notice_id, stage), as_dict=1)
     print("*****************", exists)
-    if not exists:
+    if exists:
         frappe.throw("Stage already exists for this Notice ID.")
     else:
         pass
