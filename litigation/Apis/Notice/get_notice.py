@@ -2,6 +2,8 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from http import HTTPStatus
+import base64
+from frappe.utils.file_manager import save_file
 
 
 @frappe.whitelist()
@@ -158,7 +160,52 @@ def check_stage(data, method):
 #     return filtered_response
 
 """ Below is the working code Original """
-@frappe.whitelist()
+# @frappe.whitelist()
+# def create_and_update_notice(**data):
+#     try:
+#         created = False
+
+#         if data.get("name"):
+#             existing_doc = frappe.db.exists("Notice", {"name": data.get("name")})
+#             if existing_doc:
+#                 doc = frappe.get_doc("Notice", existing_doc)
+#             else:
+#                 doc = frappe.get_doc({"doctype": "Notice"})
+#                 created = True
+#         else:
+#             doc = frappe.get_doc({"doctype": "Notice"})
+#             created = True
+
+       
+#         doc.update(data)
+
+#         doc.save()
+#         frappe.db.commit()
+
+#         status_code = 201 if created else 200
+
+#         filtered_response = {
+#             "name": doc.name,
+#             "status_code": status_code
+#         }
+
+#     except Exception as e:
+        
+#         frappe.db.rollback()  
+#         filtered_response = {
+#             "status_code": 406,
+#             "error": str(e)
+#         }
+
+#     return filtered_response
+
+
+
+
+
+
+
+@frappe.whitelist(allow_guest=True)
 def create_and_update_notice(**data):
     try:
         created = False
@@ -174,32 +221,31 @@ def create_and_update_notice(**data):
             doc = frappe.get_doc({"doctype": "Notice"})
             created = True
 
-       
         doc.update(data)
-
         doc.save()
         frappe.db.commit()
 
-        status_code = 201 if created else 200
+        if 'attachment' in frappe.request.files:
+            file = frappe.request.files['attachment']
+            is_private = frappe.form_dict.get('is_private', 0)
+            saved_file = save_file(file.filename, file.stream.read(), "Notice", doc.name, is_private=int(is_private))
+            doc.attachment = saved_file.file_url
+            doc.save()
 
+        status_code = 201 if created else 200
         filtered_response = {
             "name": doc.name,
             "status_code": status_code
         }
 
     except Exception as e:
-        
-        frappe.db.rollback()  
+        frappe.db.rollback()
         filtered_response = {
             "status_code": 406,
             "error": str(e)
         }
 
     return filtered_response
-
-
-
-
 
 
 
