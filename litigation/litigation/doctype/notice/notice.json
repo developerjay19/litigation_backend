@@ -48,7 +48,7 @@
   "reviewed_by",
   "want_to_appeal",
   "column_break_zyjb",
-  "date_or_replay_submit",
+  "date_of_replay_submit",
   "date_or_arn",
   "attachment",
   "date_of_appeal",
@@ -242,12 +242,6 @@
    "label": "Due Date"
   },
   {
-   "fieldname": "date_or_replay_submit",
-   "fieldtype": "Select",
-   "label": "Date or Replay Submit",
-   "options": "Reply with Due Date\nReply with Extention Date"
-  },
-  {
    "fieldname": "column_break_zyjb",
    "fieldtype": "Column Break"
   },
@@ -338,11 +332,16 @@
    "fieldname": "want_to_appeal",
    "fieldtype": "Data",
    "label": "Want To Appeal"
+  },
+  {
+   "fieldname": "date_of_replay_submit",
+   "fieldtype": "Date",
+   "label": "Date of Replay Submit"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-16 14:40:32.858715",
+ "modified": "2024-10-16 16:35:26.286469",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",
