@@ -31,8 +31,9 @@
   "issue_under_section",
   "issue_under_rule",
   "column_break_yfkh",
-  "period_covered",
+  "period_covered_from",
   "date_of_receipt_of_notice",
+  "period_covered_to",
   "matter_of_issue_section",
   "demand_amount",
   "disputed_amount",
@@ -45,7 +46,7 @@
   "due_date",
   "prepared_by",
   "reviewed_by",
-  "appeal_status",
+  "want_to_appeal",
   "column_break_zyjb",
   "date_or_replay_submit",
   "date_or_arn",
@@ -54,7 +55,6 @@
   "development_side_columns_section",
   "notice_status",
   "date_of_hearing",
-  "contingent_liabilities",
   "column_break_ofsb",
   "notice_stage",
   "date_of_extension",
@@ -190,11 +190,6 @@
    "label": "Issue under Rule"
   },
   {
-   "fieldname": "period_covered",
-   "fieldtype": "Data",
-   "label": "Period Covered"
-  },
-  {
    "fieldname": "date_of_receipt_of_notice",
    "fieldtype": "Date",
    "label": "Date of Receipt of Notice"
@@ -293,11 +288,6 @@
    "options": "User"
   },
   {
-   "fieldname": "appeal_status",
-   "fieldtype": "Data",
-   "label": "Appeal Status"
-  },
-  {
    "fieldname": "date_of_appeal",
    "fieldtype": "Date",
    "label": "Date of Appeal"
@@ -315,8 +305,9 @@
   },
   {
    "fieldname": "date_of_extension",
-   "fieldtype": "Date",
-   "label": "Date of Extension"
+   "fieldtype": "Select",
+   "label": "Date of Extension",
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "remarks",
@@ -334,15 +325,24 @@
    "options": "Notice Pre Deposit And Contingent Liability Amount"
   },
   {
-   "fieldname": "contingent_liabilities",
-   "fieldtype": "Table",
-   "label": "Contingent Liabilities",
-   "options": "Contingent Liabilities"
+   "fieldname": "period_covered_from",
+   "fieldtype": "Date",
+   "label": "Period Covered From"
+  },
+  {
+   "fieldname": "period_covered_to",
+   "fieldtype": "Date",
+   "label": "Period Covered To"
+  },
+  {
+   "fieldname": "want_to_appeal",
+   "fieldtype": "Data",
+   "label": "Want To Appeal"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-15 11:38:27.783836",
+ "modified": "2024-10-16 12:28:04.874127",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",

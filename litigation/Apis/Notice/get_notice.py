@@ -1,6 +1,9 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+from http import HTTPStatus
+
+
 @frappe.whitelist()
 def test_function():
     json_string = '{"name": "John", "age": 30}'
@@ -154,7 +157,7 @@ def check_stage(data, method):
 
 #     return filtered_response
 
-
+""" Below is the working code Original """
 @frappe.whitelist()
 def create_and_update_notice(**data):
     try:
@@ -188,11 +191,18 @@ def create_and_update_notice(**data):
         
         frappe.db.rollback()  
         filtered_response = {
-            "status_code": 500,
+            "status_code": 406,
             "error": str(e)
         }
 
     return filtered_response
+
+
+
+
+
+
+
 
 
 
