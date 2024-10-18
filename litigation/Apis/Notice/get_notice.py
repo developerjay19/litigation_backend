@@ -268,7 +268,11 @@ def create_and_update_notice(**data):
 
 
 
+@frappe.whitelist()
+def latest_created_notice():
 
+    vals = frappe.db.sql(""" SELECT t1.notice_id, t1.notice_date, t1.entity, t1.gst_form, t1.gstin, t1.stage, t1.notice_status FROM `tabNotice` t1 INNER JOIN (SELECT notice_id, MAX(creation) AS latest_creation FROM `tabNotice` GROUP BY notice_id) t2 ON t1.notice_id = t2.notice_id AND t1.creation = t2.latest_creation""", as_dict=1)
+    return vals
 
 
 
