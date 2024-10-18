@@ -56,7 +56,7 @@
   "notice_status",
   "date_of_hearing",
   "column_break_ofsb",
-  "notice_stage",
+  "stage",
   "date_of_extension",
   "remarks"
  ],
@@ -287,12 +287,6 @@
    "label": "Date of Appeal"
   },
   {
-   "fieldname": "notice_stage",
-   "fieldtype": "Select",
-   "label": "Notice Stage",
-   "options": "Stage1\nStage2\nStage3\nStage4"
-  },
-  {
    "fieldname": "date_of_hearing",
    "fieldtype": "Date",
    "label": "Date of Hearing"
@@ -337,11 +331,17 @@
    "fieldname": "date_of_replay_submit",
    "fieldtype": "Date",
    "label": "Date of Replay Submit"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Link",
+   "label": "Stage",
+   "options": "Stage Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-16 16:35:26.286469",
+ "modified": "2024-10-18 19:10:32.102325",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",

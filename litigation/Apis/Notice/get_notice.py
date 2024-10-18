@@ -66,14 +66,33 @@ def get_master_data():
 
 
 
+# def check_stage(data, method):
+#     name = data.get('name')  
+#     notice_id = data.get('notice_id')
+#     stage = data.get('notice_stage')
+#     print("***************", name, notice_id, stage)
+
+   
+#     exists = frappe.db.sql(""" SELECT notice_id, notice_stage FROM `tabNotice` WHERE notice_id=%s AND notice_stage=%s AND name!=%s """, (notice_id, stage, name), as_dict=1)
+
+#     print("*****************", exists)
+    
+#     if exists:
+#         frappe.throw("Stage already exists for this Notice ID.")
+#     else:
+#         pass
+#     print("***********************************", exists)
+
+    
+
 def check_stage(data, method):
     name = data.get('name')  
     notice_id = data.get('notice_id')
-    stage = data.get('notice_stage')
+    stage = data.get('stage')
     print("***************", name, notice_id, stage)
 
    
-    exists = frappe.db.sql(""" SELECT notice_id, notice_stage FROM `tabNotice` WHERE notice_id=%s AND notice_stage=%s AND name!=%s """, (notice_id, stage, name), as_dict=1)
+    exists = frappe.db.sql(""" SELECT notice_id, stage FROM `tabNotice` WHERE notice_id=%s AND stage=%s AND name!=%s """, (notice_id, stage, name), as_dict=1)
 
     print("*****************", exists)
     
@@ -83,7 +102,6 @@ def check_stage(data, method):
         pass
     print("***********************************", exists)
 
-    
 
 
 # @frappe.whitelist()
@@ -301,5 +319,3 @@ def create_and_update_notice(**data):
 #     }
 
 #     return filtered_response
-
-

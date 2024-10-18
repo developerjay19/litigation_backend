@@ -149,7 +149,7 @@ doc_events = {
 	
 	"Notice":{
 
-		"after_insert": "litigation.Apis.Notice.get_notice.check_stage"
+		"validate": "litigation.Apis.Notice.get_notice.check_stage"
 
 	}
 
