@@ -274,6 +274,86 @@ def latest_created_notice():
     vals = frappe.db.sql(""" SELECT t1.notice_id, t1.notice_date, t1.entity, t1.gst_form, t1.gstin, t1.stage, t1.notice_status FROM `tabNotice` t1 INNER JOIN (SELECT notice_id, MAX(creation) AS latest_creation FROM `tabNotice` GROUP BY notice_id) t2 ON t1.notice_id = t2.notice_id AND t1.creation = t2.latest_creation""", as_dict=1)
     return vals
 
+@frappe.whitelist(allow_guest=True)
+def create_and_update_appeal(**data):
+    try:
+        created = False
+
+        if data.get("notice_id"):
+            notice_name = frappe.db.get_value("Notice", {"notice_id": data.get("notice_id")}, "name")
+            if not notice_name:
+                raise ValueError(f"Notice with notice_id {data.get('notice_id')} does not exist.")
+            data["notice_id"] = notice_name
+
+        if data.get("name"):
+            existing_doc = frappe.db.exists("Appeal", {"name": data.get("name")})
+            if existing_doc:
+                doc = frappe.get_doc("Appeal", existing_doc)
+            else:
+                doc = frappe.get_doc({"doctype": "Appeal"})
+                created = True
+        else:
+            doc = frappe.get_doc({"doctype": "Appeal"})
+            created = True
+
+        doc.update(data)
+        doc.save()
+        frappe.db.commit()
+
+        status_code = 201 if created else 200
+        filtered_response = {
+            "name": doc.name,
+            "status_code": status_code
+        }
+
+    except Exception as e:
+        frappe.db.rollback()
+        filtered_response = {
+            "status_code": 406,
+            "error": str(e)
+        }
+
+    return filtered_response
+
+
+# @frappe.whitelist(allow_guest=True)
+# def create_and_update_appeal(**data):
+#     try:
+#         created = False
+
+#         if data.get("name"):
+#             existing_doc = frappe.db.exists("Appeal", {"name": data.get("name")})
+#             if existing_doc:
+#                 doc = frappe.get_doc("Appeal", existing_doc)
+#             else:
+#                 doc = frappe.get_doc({"doctype": "Appeal"})
+#                 created = True
+#         else:
+#             doc = frappe.get_doc({"doctype": "Appeal"})
+#             created = True
+
+#         doc.update(data)
+#         doc.save()
+#         frappe.db.commit()
+
+
+#         status_code = 201 if created else 200
+#         filtered_response = {
+#             "name": doc.name,
+#             "status_code": status_code
+#         }
+
+#     except Exception as e:
+#         frappe.db.rollback()
+#         filtered_response = {
+#             "status_code": 406,
+#             "error": str(e)
+#         }
+
+#     return filtered_response
+
+
+
 
 
 # @frappe.whitelist()
