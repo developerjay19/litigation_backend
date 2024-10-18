@@ -13,6 +13,7 @@
   "penalty_sgst",
   "penalty_cess",
   "grand_total",
+  "upload",
   "column_break_mowj",
   "tax_amount_cgst",
   "tax_amount_igst",
@@ -24,7 +25,8 @@
   "total_igst",
   "total_cgst",
   "total_sgst",
-  "total_cess"
+  "total_cess",
+  "remark"
  ],
  "fields": [
   {
@@ -125,12 +127,22 @@
    "fieldname": "grand_total",
    "fieldtype": "Data",
    "label": "Grand Total"
+  },
+  {
+   "fieldname": "upload",
+   "fieldtype": "Attach",
+   "label": "Upload"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-10 09:20:08.148731",
+ "modified": "2024-10-18 21:06:54.870089",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Contingent Liabilities",

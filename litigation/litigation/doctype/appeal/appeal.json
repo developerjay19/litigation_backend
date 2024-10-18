@@ -24,7 +24,6 @@
   "due_date_of_appeal",
   "appeal_reviewed_by",
   "demand_confimation_section",
-  "contingent_liabilities",
   "order_date",
   "status_of_appeal",
   "column_break_bvmv",
@@ -40,7 +39,8 @@
   "refund_section",
   "refund",
   "paid_section",
-  "paid"
+  "paid",
+  "contingent_liabilities"
  ],
  "fields": [
   {
@@ -145,12 +145,6 @@
    "label": "Demand Confimation"
   },
   {
-   "fieldname": "contingent_liabilities",
-   "fieldtype": "Link",
-   "label": "Contingent Liabilities",
-   "options": "Contingent Liabilities"
-  },
-  {
    "fieldname": "pre_deposite_application",
    "fieldtype": "Data",
    "label": "Pre Deposite Application"
@@ -235,11 +229,17 @@
    "fieldtype": "Table",
    "label": "Paid",
    "options": "Paid"
+  },
+  {
+   "fieldname": "contingent_liabilities",
+   "fieldtype": "Table",
+   "label": "Contingent Liabilities",
+   "options": "Contingent Liabilities"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 10:27:03.638718",
+ "modified": "2024-10-18 21:04:09.605322",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Appeal",

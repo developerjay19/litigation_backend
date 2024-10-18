@@ -12,6 +12,10 @@
   "penalty_cess",
   "total_cgst",
   "total_cess",
+  "interest_amount_igst",
+  "interest_amount_cgst",
+  "interest_amount_sgst",
+  "interest_amount_cess",
   "column_break_fbcw",
   "tax_amount_cgst",
   "tax_amount_sgst",
@@ -22,7 +26,9 @@
   "penalty_sgst",
   "total_igst",
   "total_sgst",
-  "grand_total"
+  "grand_total",
+  "remark",
+  "upload"
  ],
  "fields": [
   {
@@ -121,13 +127,43 @@
    "fieldname": "grand_total",
    "fieldtype": "Data",
    "label": "Grand Total"
+  },
+  {
+   "fieldname": "interest_amount_igst",
+   "fieldtype": "Data",
+   "label": "Interest Amount IGST"
+  },
+  {
+   "fieldname": "interest_amount_cgst",
+   "fieldtype": "Data",
+   "label": "Interest Amount CGST"
+  },
+  {
+   "fieldname": "interest_amount_sgst",
+   "fieldtype": "Data",
+   "label": "Interest Amount SGST"
+  },
+  {
+   "fieldname": "interest_amount_cess",
+   "fieldtype": "Data",
+   "label": "Interest Amount CESS"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "upload",
+   "fieldtype": "Attach",
+   "label": "Upload"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-10 10:09:38.211453",
+ "modified": "2024-10-18 20:54:38.178007",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Demand Confirmation",

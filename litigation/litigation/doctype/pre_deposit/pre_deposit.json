@@ -6,39 +6,30 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "description_of_matter_of_issue",
-  "taxable_amount",
+  "prescription",
   "count",
   "penalty_igst",
   "penalty_cgst",
   "penalty_sgst",
   "penalty_cess",
   "grand_total",
+  "other_charges_igst",
+  "other_charges_cgst",
+  "other_charges_sgst",
+  "other_charges_cess",
+  "upload",
   "column_break_sjqx",
-  "tax_amount_igst",
-  "tax_amount_cgst",
-  "tax_amount_sgst",
-  "tax_amount_cess",
   "interest_igst",
   "interest_cgst",
   "interest_sgst",
   "interest_cess",
-  "total_igst",
-  "total_cgst",
-  "total_sgst",
-  "total_cess"
+  "fees_igst",
+  "fees_cgst",
+  "fees_sgst",
+  "fees_cess",
+  "remark"
  ],
  "fields": [
-  {
-   "fieldname": "description_of_matter_of_issue",
-   "fieldtype": "Text",
-   "label": "Description of Matter of Issue"
-  },
-  {
-   "fieldname": "taxable_amount",
-   "fieldtype": "Data",
-   "label": "Taxable Amount"
-  },
   {
    "fieldname": "count",
    "fieldtype": "Data",
@@ -69,26 +60,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "tax_amount_igst",
-   "fieldtype": "Data",
-   "label": "Tax Amount IGST"
-  },
-  {
-   "fieldname": "tax_amount_cgst",
-   "fieldtype": "Data",
-   "label": "Tax Amount CGST"
-  },
-  {
-   "fieldname": "tax_amount_sgst",
-   "fieldtype": "Data",
-   "label": "Tax Amount SGST"
-  },
-  {
-   "fieldname": "tax_amount_cess",
-   "fieldtype": "Data",
-   "label": "Tax Amount CESS"
-  },
-  {
    "fieldname": "interest_igst",
    "fieldtype": "Data",
    "label": "Interest IGST"
@@ -114,30 +85,65 @@
    "label": "Grand Total"
   },
   {
-   "fieldname": "total_igst",
+   "fieldname": "prescription",
    "fieldtype": "Data",
-   "label": "Total IGST"
+   "label": "Prescription"
   },
   {
-   "fieldname": "total_cgst",
+   "fieldname": "fees_igst",
    "fieldtype": "Data",
-   "label": "Total CGST"
+   "label": "Fees IGST"
   },
   {
-   "fieldname": "total_sgst",
+   "fieldname": "fees_cgst",
    "fieldtype": "Data",
-   "label": "Total SGST"
+   "label": "Fees CGST"
   },
   {
-   "fieldname": "total_cess",
+   "fieldname": "fees_sgst",
    "fieldtype": "Data",
-   "label": "Total CESS"
+   "label": "Fees SGST"
+  },
+  {
+   "fieldname": "fees_cess",
+   "fieldtype": "Data",
+   "label": "Fees CESS"
+  },
+  {
+   "fieldname": "other_charges_igst",
+   "fieldtype": "Data",
+   "label": "Other Charges IGST"
+  },
+  {
+   "fieldname": "other_charges_cgst",
+   "fieldtype": "Data",
+   "label": "Other Charges CGST"
+  },
+  {
+   "fieldname": "other_charges_sgst",
+   "fieldtype": "Data",
+   "label": "Other Charges SGST"
+  },
+  {
+   "fieldname": "other_charges_cess",
+   "fieldtype": "Data",
+   "label": "Other Charges CESS"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "upload",
+   "fieldtype": "Attach",
+   "label": "Upload"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-10 10:14:29.739204",
+ "modified": "2024-10-18 20:54:20.785112",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Pre Deposit",
