@@ -45,33 +45,28 @@
  "fields": [
   {
    "fieldname": "notice_id",
-   "fieldtype": "Link",
-   "label": "Notice Id",
-   "options": "Notice"
+   "fieldtype": "Data",
+   "label": "Notice Id"
   },
   {
    "fieldname": "notice_date",
-   "fieldtype": "Link",
-   "label": "Notice Date",
-   "options": "Notice"
+   "fieldtype": "Data",
+   "label": "Notice Date"
   },
   {
    "fieldname": "entity",
-   "fieldtype": "Link",
-   "label": "Entity",
-   "options": "Notice"
+   "fieldtype": "Data",
+   "label": "Entity"
   },
   {
    "fieldname": "gstin",
-   "fieldtype": "Link",
-   "label": "GSTIN",
-   "options": "Notice"
+   "fieldtype": "Data",
+   "label": "GSTIN"
   },
   {
    "fieldname": "department",
-   "fieldtype": "Link",
-   "label": "Department",
-   "options": "Notice"
+   "fieldtype": "Data",
+   "label": "Department"
   },
   {
    "fieldname": "column_break_tbto",
@@ -86,7 +81,7 @@
    "fieldname": "appeal_authority",
    "fieldtype": "Link",
    "label": "Appeal Authority",
-   "options": "Notice"
+   "options": "Appellate Authority Master"
   },
   {
    "fieldname": "appeal_address",
@@ -126,7 +121,7 @@
    "fieldname": "appeal_prepared_by",
    "fieldtype": "Link",
    "label": "Appeal Prepared By",
-   "options": "Notice"
+   "options": "User"
   },
   {
    "fieldname": "due_date_of_appeal",
@@ -137,7 +132,7 @@
    "fieldname": "appeal_reviewed_by",
    "fieldtype": "Link",
    "label": "Appeal Reviewed By",
-   "options": "Notice"
+   "options": "User"
   },
   {
    "fieldname": "demand_confimation_section",
@@ -239,7 +234,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 21:04:09.605322",
+ "modified": "2024-10-22 12:51:07.482798",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Appeal",
