@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:issuing_authority_name",
  "creation": "2024-10-01 15:20:35.708421",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,20 +13,22 @@
   {
    "fieldname": "issuing_authority_name",
    "fieldtype": "Data",
-   "label": "Issuing Authority Name"
+   "label": "Issuing Authority Name",
+   "unique": 1
   },
   {
    "fieldname": "issuing_authority_description",
-   "fieldtype": "Data",
+   "fieldtype": "Text",
    "label": "Issuing Authority Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 15:21:09.090917",
+ "modified": "2024-10-09 14:36:51.497031",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Issuing Authority Master",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

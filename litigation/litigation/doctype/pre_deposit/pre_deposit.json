@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-10 10:10:54.035401",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "prescription",
+  "count",
+  "penalty_igst",
+  "penalty_cgst",
+  "penalty_sgst",
+  "penalty_cess",
+  "grand_total",
+  "other_charges_igst",
+  "other_charges_cgst",
+  "other_charges_sgst",
+  "other_charges_cess",
+  "upload",
+  "column_break_sjqx",
+  "interest_igst",
+  "interest_cgst",
+  "interest_sgst",
+  "interest_cess",
+  "fees_igst",
+  "fees_cgst",
+  "fees_sgst",
+  "fees_cess",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "count",
+   "fieldtype": "Data",
+   "label": "Count(%)"
+  },
+  {
+   "fieldname": "penalty_igst",
+   "fieldtype": "Data",
+   "label": "Penalty IGST"
+  },
+  {
+   "fieldname": "penalty_cgst",
+   "fieldtype": "Data",
+   "label": "Penalty CGST"
+  },
+  {
+   "fieldname": "penalty_sgst",
+   "fieldtype": "Data",
+   "label": "Penalty SGST"
+  },
+  {
+   "fieldname": "penalty_cess",
+   "fieldtype": "Data",
+   "label": "Penalty CESS"
+  },
+  {
+   "fieldname": "column_break_sjqx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "interest_igst",
+   "fieldtype": "Data",
+   "label": "Interest IGST"
+  },
+  {
+   "fieldname": "interest_cgst",
+   "fieldtype": "Data",
+   "label": "Interest CGST"
+  },
+  {
+   "fieldname": "interest_sgst",
+   "fieldtype": "Data",
+   "label": "Interest SGST"
+  },
+  {
+   "fieldname": "interest_cess",
+   "fieldtype": "Data",
+   "label": "Interest CESS"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Data",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "prescription",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "fees_igst",
+   "fieldtype": "Data",
+   "label": "Fees IGST"
+  },
+  {
+   "fieldname": "fees_cgst",
+   "fieldtype": "Data",
+   "label": "Fees CGST"
+  },
+  {
+   "fieldname": "fees_sgst",
+   "fieldtype": "Data",
+   "label": "Fees SGST"
+  },
+  {
+   "fieldname": "fees_cess",
+   "fieldtype": "Data",
+   "label": "Fees CESS"
+  },
+  {
+   "fieldname": "other_charges_igst",
+   "fieldtype": "Data",
+   "label": "Other Charges IGST"
+  },
+  {
+   "fieldname": "other_charges_cgst",
+   "fieldtype": "Data",
+   "label": "Other Charges CGST"
+  },
+  {
+   "fieldname": "other_charges_sgst",
+   "fieldtype": "Data",
+   "label": "Other Charges SGST"
+  },
+  {
+   "fieldname": "other_charges_cess",
+   "fieldtype": "Data",
+   "label": "Other Charges CESS"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "upload",
+   "fieldtype": "Attach",
+   "label": "Upload"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-26 11:44:19.582769",
+ "modified_by": "Administrator",
+ "module": "litigation",
+ "name": "Pre Deposit",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

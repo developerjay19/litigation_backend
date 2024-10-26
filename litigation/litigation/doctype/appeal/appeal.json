@@ -1,0 +1,259 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-10 09:23:49.980965",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "notice_id",
+  "notice_date",
+  "entity",
+  "column_break_tbto",
+  "gstin",
+  "department",
+  "appellate_details_section",
+  "appeal_authority",
+  "appeal_address",
+  "appeal_form",
+  "order_no",
+  "appeal_prepared_by",
+  "column_break_pgtr",
+  "appeal_no",
+  "appeal_date",
+  "appeal_against_order_no",
+  "due_date_of_appeal",
+  "appeal_reviewed_by",
+  "demand_confimation_section",
+  "order_date",
+  "status_of_appeal",
+  "column_break_bvmv",
+  "pre_deposite_application",
+  "decision",
+  "refund_status",
+  "section_break_jimz",
+  "demand_confirmation",
+  "pre_deposit_section",
+  "pre_deposit",
+  "disputed_amount_section",
+  "disputed_amount",
+  "refund_section",
+  "refund",
+  "paid_section",
+  "paid",
+  "contingent_liabilities"
+ ],
+ "fields": [
+  {
+   "fieldname": "notice_id",
+   "fieldtype": "Data",
+   "label": "Notice Id"
+  },
+  {
+   "fieldname": "notice_date",
+   "fieldtype": "Data",
+   "label": "Notice Date"
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "label": "Entity"
+  },
+  {
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_tbto",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appellate_details_section",
+   "fieldtype": "Section Break",
+   "label": "Appellate Details"
+  },
+  {
+   "fieldname": "appeal_authority",
+   "fieldtype": "Link",
+   "label": "Appeal Authority",
+   "options": "Appellate Authority Master"
+  },
+  {
+   "fieldname": "appeal_address",
+   "fieldtype": "Data",
+   "label": "Appeal Address"
+  },
+  {
+   "fieldname": "appeal_form",
+   "fieldtype": "Data",
+   "label": "Appeal Form"
+  },
+  {
+   "fieldname": "column_break_pgtr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appeal_no",
+   "fieldtype": "Data",
+   "label": "Appeal No"
+  },
+  {
+   "fieldname": "appeal_date",
+   "fieldtype": "Date",
+   "label": "Appeal Date"
+  },
+  {
+   "fieldname": "appeal_against_order_no",
+   "fieldtype": "Data",
+   "label": "Appeal Against Order No"
+  },
+  {
+   "fieldname": "order_no",
+   "fieldtype": "Data",
+   "label": "Order No"
+  },
+  {
+   "fieldname": "appeal_prepared_by",
+   "fieldtype": "Link",
+   "label": "Appeal Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "due_date_of_appeal",
+   "fieldtype": "Date",
+   "label": "Due Date of Appeal"
+  },
+  {
+   "fieldname": "appeal_reviewed_by",
+   "fieldtype": "Link",
+   "label": "Appeal Reviewed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "demand_confimation_section",
+   "fieldtype": "Section Break",
+   "label": "Demand Confimation"
+  },
+  {
+   "fieldname": "pre_deposite_application",
+   "fieldtype": "Data",
+   "label": "Pre Deposite Application"
+  },
+  {
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "label": "Order Date"
+  },
+  {
+   "fieldname": "column_break_bvmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "decision",
+   "fieldtype": "Select",
+   "label": "Decision",
+   "options": "Allowed\nDisallowed"
+  },
+  {
+   "fieldname": "status_of_appeal",
+   "fieldtype": "Select",
+   "label": "Status Of Appeal",
+   "options": "Disposed\nDemand Confirmed"
+  },
+  {
+   "fieldname": "refund",
+   "fieldtype": "Table",
+   "label": "Refund",
+   "options": "Refund"
+  },
+  {
+   "fieldname": "section_break_jimz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "demand_confirmation",
+   "fieldtype": "Table",
+   "label": "Demand Confirmation",
+   "options": "Demand Confirmation"
+  },
+  {
+   "fieldname": "pre_deposit_section",
+   "fieldtype": "Section Break",
+   "label": "Pre Deposit"
+  },
+  {
+   "fieldname": "pre_deposit",
+   "fieldtype": "Table",
+   "label": "Pre Deposit",
+   "options": "Pre Deposit"
+  },
+  {
+   "fieldname": "disputed_amount_section",
+   "fieldtype": "Section Break",
+   "label": "Disputed Amount"
+  },
+  {
+   "fieldname": "disputed_amount",
+   "fieldtype": "Table",
+   "label": "Disputed Amount",
+   "options": "Disputed Amount"
+  },
+  {
+   "fieldname": "refund_status",
+   "fieldtype": "Select",
+   "label": "Refund Status",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "refund_section",
+   "fieldtype": "Section Break",
+   "label": "Refund"
+  },
+  {
+   "fieldname": "paid_section",
+   "fieldtype": "Section Break",
+   "label": "Paid"
+  },
+  {
+   "fieldname": "paid",
+   "fieldtype": "Table",
+   "label": "Paid",
+   "options": "Paid"
+  },
+  {
+   "fieldname": "contingent_liabilities",
+   "fieldtype": "Table",
+   "label": "Contingent Liabilities",
+   "options": "Contingent Liabilities"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-22 12:51:07.482798",
+ "modified_by": "Administrator",
+ "module": "litigation",
+ "name": "Appeal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

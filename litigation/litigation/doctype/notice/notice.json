@@ -31,25 +31,34 @@
   "issue_under_section",
   "issue_under_rule",
   "column_break_yfkh",
-  "period_covered",
+  "period_covered_from",
   "date_of_receipt_of_notice",
+  "period_covered_to",
   "matter_of_issue_section",
   "demand_amount",
-  "admitted_amount",
-  "column_break_ozec",
   "disputed_amount",
+  "column_break_ozec",
   "pre_deposit_and_contingent_liability",
+  "admitted_amount",
+  "section_break_znnf",
+  "table_okzc",
   "replay_info_section",
   "due_date",
-  "prepare_by",
+  "prepared_by",
+  "reviewed_by",
+  "want_to_appeal",
   "column_break_zyjb",
-  "date_or_replay_submit",
+  "date_of_replay_submit",
   "date_or_arn",
   "attachment",
+  "date_of_appeal",
   "development_side_columns_section",
   "notice_status",
+  "date_of_hearing",
   "column_break_ofsb",
-  "notice_stages"
+  "stage",
+  "date_of_extension",
+  "remarks"
  ],
  "fields": [
   {
@@ -60,6 +69,7 @@
   {
    "fieldname": "notice_id",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Notice Id"
   },
   {
@@ -69,8 +79,9 @@
   },
   {
    "fieldname": "entity",
-   "fieldtype": "Data",
-   "label": "Entity"
+   "fieldtype": "Link",
+   "label": "Entity",
+   "options": "Entity Master"
   },
   {
    "fieldname": "gstin",
@@ -79,8 +90,9 @@
   },
   {
    "fieldname": "gst_form",
-   "fieldtype": "Data",
-   "label": "GST Form"
+   "fieldtype": "Link",
+   "label": "GST Form",
+   "options": "GST Form Master"
   },
   {
    "fieldname": "notice_information_tab",
@@ -105,8 +117,9 @@
   },
   {
    "fieldname": "issuing_authority",
-   "fieldtype": "Data",
-   "label": "Issuing Authority"
+   "fieldtype": "Link",
+   "label": "Issuing Authority",
+   "options": "Issuing Authority Master"
   },
   {
    "fieldname": "mobile_no",
@@ -177,13 +190,8 @@
    "label": "Issue under Rule"
   },
   {
-   "fieldname": "period_covered",
-   "fieldtype": "Data",
-   "label": "Period Covered"
-  },
-  {
    "fieldname": "date_of_receipt_of_notice",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Date of Receipt of Notice"
   },
   {
@@ -230,19 +238,8 @@
   },
   {
    "fieldname": "due_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Due Date"
-  },
-  {
-   "fieldname": "prepare_by",
-   "fieldtype": "Data",
-   "label": "Prepare By"
-  },
-  {
-   "fieldname": "date_or_replay_submit",
-   "fieldtype": "Select",
-   "label": "Date or Replay Submit",
-   "options": "Reply with Due Date\nReply with Extention Date"
   },
   {
    "fieldname": "column_break_zyjb",
@@ -269,18 +266,82 @@
    "label": "Notice Status"
   },
   {
-   "fieldname": "notice_stages",
-   "fieldtype": "Data",
-   "label": "Notice Stages"
-  },
-  {
    "fieldname": "column_break_ofsb",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By ",
+   "options": "User"
+  },
+  {
+   "fieldname": "date_of_appeal",
+   "fieldtype": "Date",
+   "label": "Date of Appeal"
+  },
+  {
+   "fieldname": "date_of_hearing",
+   "fieldtype": "Date",
+   "label": "Date of Hearing"
+  },
+  {
+   "fieldname": "date_of_extension",
+   "fieldtype": "Select",
+   "label": "Date of Extension",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_znnf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_okzc",
+   "fieldtype": "Table",
+   "label": "Notice Pre Deposit And Contingent Liability Amount",
+   "options": "Notice Pre Deposit And Contingent Liability Amount"
+  },
+  {
+   "fieldname": "period_covered_from",
+   "fieldtype": "Date",
+   "label": "Period Covered From"
+  },
+  {
+   "fieldname": "period_covered_to",
+   "fieldtype": "Date",
+   "label": "Period Covered To"
+  },
+  {
+   "fieldname": "want_to_appeal",
+   "fieldtype": "Data",
+   "label": "Want To Appeal"
+  },
+  {
+   "fieldname": "date_of_replay_submit",
+   "fieldtype": "Date",
+   "label": "Date of Replay Submit"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Link",
+   "label": "Stage",
+   "options": "Stage Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 16:42:58.054117",
+ "modified": "2024-10-18 19:10:32.102325",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice",

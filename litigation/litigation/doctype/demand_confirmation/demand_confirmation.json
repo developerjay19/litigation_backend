@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-10 10:01:47.454218",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_rw10",
+  "description_of_matter_of_issue",
+  "taxable_amount",
+  "tax_amount_igst",
+  "penalty_cess",
+  "total_cgst",
+  "total_cess",
+  "interest_amount_igst",
+  "interest_amount_cgst",
+  "interest_amount_sgst",
+  "interest_amount_cess",
+  "column_break_fbcw",
+  "tax_amount_cgst",
+  "tax_amount_sgst",
+  "tax_amount_cess",
+  "amended_from",
+  "penalty_igst",
+  "penalty_cgst",
+  "penalty_sgst",
+  "total_igst",
+  "total_sgst",
+  "grand_total",
+  "remark",
+  "upload"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_rw10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description_of_matter_of_issue",
+   "fieldtype": "Text",
+   "label": "Description of Matter of Issue",
+   "no_copy": 1,
+   "options": "Demand Confirmation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "taxable_amount",
+   "fieldtype": "Data",
+   "label": "Taxable Amount"
+  },
+  {
+   "fieldname": "tax_amount_igst",
+   "fieldtype": "Data",
+   "label": "Tax Amount IGST"
+  },
+  {
+   "fieldname": "tax_amount_cgst",
+   "fieldtype": "Data",
+   "label": "Tax Amount CGST"
+  },
+  {
+   "fieldname": "tax_amount_sgst",
+   "fieldtype": "Data",
+   "label": "Tax Amount SGST"
+  },
+  {
+   "fieldname": "tax_amount_cess",
+   "fieldtype": "Data",
+   "label": "Tax Amount CESS"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Demand Confirmation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "penalty_cess",
+   "fieldtype": "Data",
+   "label": "Penalty CESS"
+  },
+  {
+   "fieldname": "column_break_fbcw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "penalty_igst",
+   "fieldtype": "Data",
+   "label": "Penalty IGST"
+  },
+  {
+   "fieldname": "penalty_cgst",
+   "fieldtype": "Data",
+   "label": "Penalty CGST"
+  },
+  {
+   "fieldname": "penalty_sgst",
+   "fieldtype": "Data",
+   "label": "Penalty SGST"
+  },
+  {
+   "fieldname": "total_cgst",
+   "fieldtype": "Data",
+   "label": "Total CGST"
+  },
+  {
+   "fieldname": "total_cess",
+   "fieldtype": "Data",
+   "label": "Total CESS"
+  },
+  {
+   "fieldname": "total_igst",
+   "fieldtype": "Data",
+   "label": "Total IGST"
+  },
+  {
+   "fieldname": "total_sgst",
+   "fieldtype": "Data",
+   "label": "Total SGST"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Data",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "interest_amount_igst",
+   "fieldtype": "Data",
+   "label": "Interest Amount IGST"
+  },
+  {
+   "fieldname": "interest_amount_cgst",
+   "fieldtype": "Data",
+   "label": "Interest Amount CGST"
+  },
+  {
+   "fieldname": "interest_amount_sgst",
+   "fieldtype": "Data",
+   "label": "Interest Amount SGST"
+  },
+  {
+   "fieldname": "interest_amount_cess",
+   "fieldtype": "Data",
+   "label": "Interest Amount CESS"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "upload",
+   "fieldtype": "Attach",
+   "label": "Upload"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-18 20:54:38.178007",
+ "modified_by": "Administrator",
+ "module": "litigation",
+ "name": "Demand Confirmation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

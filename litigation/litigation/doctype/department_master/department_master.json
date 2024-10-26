@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:department_name",
  "creation": "2024-09-30 10:27:12.485356",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,20 +13,22 @@
   {
    "fieldname": "department_name",
    "fieldtype": "Data",
-   "label": "department name"
+   "label": "Department Name",
+   "unique": 1
   },
   {
    "fieldname": "department_description",
-   "fieldtype": "Data",
-   "label": "department description"
+   "fieldtype": "Text",
+   "label": "Department Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-30 10:29:25.201580",
+ "modified": "2024-10-09 14:34:06.553782",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Department Master",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

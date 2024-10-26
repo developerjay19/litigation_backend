@@ -145,6 +145,17 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+	
+	"Notice":{
+
+		"validate": "litigation.Apis.Notice.get_notice.check_stage"
+
+	}
+
+
+}
+
 # Scheduled Tasks
 # ---------------
 
@@ -173,10 +184,11 @@ app_license = "mit"
 
 # Overriding Methods
 # ------------------------------
-#
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "litigation.event.get_events"
-# }
+
+override_whitelisted_methods = {
+	#"frappe.desk.doctype.event.event.get_events": "litigation.event.get_events"
+	#"frappe.client.save": "litigation.Apis.Notice.get_notice.create_and_update_notice",
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

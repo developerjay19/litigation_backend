@@ -8,7 +8,7 @@
   "description_of_matter_of_issue",
   "drc3_arn_ref_no",
   "drc3_arn_ref_date",
-  "made_of_payment",
+  "mode_of_payment",
   "grand_total",
   "column_break_wmnn",
   "tax_amount_igst",
@@ -24,7 +24,13 @@
   "penalty_igst",
   "penalty_cgst",
   "penalty_sgst",
-  "penalty_cess"
+  "penalty_cess",
+  "section_break_hgsg",
+  "total_igst",
+  "total_cgst",
+  "column_break_damk",
+  "total_sgst",
+  "total_cess"
  ],
  "fields": [
   {
@@ -41,11 +47,6 @@
    "fieldname": "drc3_arn_ref_date",
    "fieldtype": "Date",
    "label": "DRC3 ARN Ref Date"
-  },
-  {
-   "fieldname": "made_of_payment",
-   "fieldtype": "Data",
-   "label": "Made of Payment"
   },
   {
    "fieldname": "tax_amount_igst",
@@ -123,12 +124,45 @@
   {
    "fieldname": "column_break_bokf",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Data",
+   "label": "Mode of Payment"
+  },
+  {
+   "fieldname": "section_break_hgsg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_igst",
+   "fieldtype": "Data",
+   "label": "Total IGST"
+  },
+  {
+   "fieldname": "total_cgst",
+   "fieldtype": "Data",
+   "label": "Total CGST"
+  },
+  {
+   "fieldname": "total_sgst",
+   "fieldtype": "Data",
+   "label": "Total SGST"
+  },
+  {
+   "fieldname": "total_cess",
+   "fieldtype": "Data",
+   "label": "Total CESS"
+  },
+  {
+   "fieldname": "column_break_damk",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-01 16:41:26.810056",
+ "modified": "2024-10-09 15:02:20.574898",
  "modified_by": "Administrator",
  "module": "litigation",
  "name": "Notice Admitted Amount",
