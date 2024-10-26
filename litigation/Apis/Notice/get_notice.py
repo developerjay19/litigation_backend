@@ -271,7 +271,7 @@ def create_and_update_notice(**data):
 @frappe.whitelist()
 def latest_created_notice():
 
-    vals = frappe.db.sql(""" SELECT t1.notice_id, t1.notice_date, t1.entity, t1.gst_form, t1.gstin, t1.stage, t1.notice_status FROM `tabNotice` t1 INNER JOIN (SELECT notice_id, MAX(creation) AS latest_creation FROM `tabNotice` GROUP BY notice_id) t2 ON t1.notice_id = t2.notice_id AND t1.creation = t2.latest_creation""", as_dict=1)
+    vals = frappe.db.sql(""" SELECT t1.notice_id, t1.notice_date, t1.name ,t1.entity, t1.gst_form, t1.gstin, t1.stage, t1.notice_status FROM `tabNotice` t1 INNER JOIN (SELECT notice_id, MAX(creation) AS latest_creation FROM `tabNotice` GROUP BY notice_id) t2 ON t1.notice_id = t2.notice_id AND t1.creation = t2.latest_creation""", as_dict=1)
     return vals
 
 
@@ -327,6 +327,35 @@ def create_and_update_appeal(**data):
 
     return filtered_response
 
+
+
+
+#User and Appellate Authority Master Data API
+@frappe.whitelist()
+def get_user_authority():
+    try:
+       
+        user_data = frappe.get_all('User', fields=['full_name', 'email'])    
+        authority_data = frappe.get_all('Appellate Authority Master', fields=['name'])
+
+        frappe.local.response['http_status_code'] = 200
+        return {
+            'status': 'success',
+            'message': 'Data fetched successfully',
+            'data': {
+                'user_data': user_data,
+                'authority_data': authority_data,
+
+            }
+        }
+
+    except Exception as e:
+      
+        frappe.local.response['http_status_code'] = 500
+        return {
+            'status': 'failure',
+            'message': f'Error fetching data: {str(e)}'
+        }
 
 
 """ Below code works but without Attachment """
